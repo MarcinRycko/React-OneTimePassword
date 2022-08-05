@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import GlobalStyle from './assets/GlobalStyle';
+import PasswordFields from './view/PasswordApp/PasswordApp';
+import useReduce from './hooks/usePasswordInputs';
 
-function App() {
+const App: React.FC = () => {
+  const {
+    state,
+    handleChange,
+    inputRef,
+    handleCheckbox,
+    handleOnClick,
+    handleKeyUp,
+    handleSubmit,
+  } = useReduce('password');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyle />
+      <PasswordFields
+        state={state}
+        handleChange={handleChange}
+        inputRef={inputRef}
+        handleCheckbox={handleCheckbox}
+        handleOnClick={handleOnClick}
+        handleKeyUp={handleKeyUp}
+        handleSubmit={handleSubmit}
+      />
+    </>
   );
-}
+};
 
 export default App;
