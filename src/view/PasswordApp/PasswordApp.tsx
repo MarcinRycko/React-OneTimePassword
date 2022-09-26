@@ -1,10 +1,9 @@
-import React from 'react';
 import Button from '../../Components/Button/Button';
 import { PasswordAppProps } from './types';
 import { StyledWrapper } from '../../Components/Wrapper/StyledWrapper';
 import Checkbox from '../../Components/Checkbox/Checkbox';
-import MessageBox from '../../Components/MessageBox/MessageBox';
-import InputsBox from '../../Components/InputsBox/InputsBox';
+import MessageContainer from '../../Components/MessageContainer/MessageContainer';
+import InputsContainer from '../../Components/InputsContainer/InputsContainer';
 
 const PasswordApp: React.FC<PasswordAppProps> = ({
   state,
@@ -14,20 +13,14 @@ const PasswordApp: React.FC<PasswordAppProps> = ({
   handleOnClick,
   handleKeyUp,
   handleSubmit,
-  state: {
-    activeElement,
-    isPasswordVisible,
-    isFormComplete,
-    isPasswordCorrect,
-  },
+  state: { isPasswordVisible, isFormComplete, isPasswordCorrect },
 }) => {
   return (
     <>
       <StyledWrapper type="formWrapper">
-        <MessageBox isPasswordCorrect={isPasswordCorrect} />
-        <InputsBox
+        <MessageContainer isPasswordCorrect={isPasswordCorrect} />
+        <InputsContainer
           state={state}
-          activeElement={activeElement}
           inputRef={inputRef}
           handleChange={handleChange}
           handleKeyUp={handleKeyUp}

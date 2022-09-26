@@ -1,25 +1,20 @@
-type TInputDataElement = {
-  index: number;
-  value: string;
-  isDisabled: boolean;
-};
-
 type TState = {
   password: string;
-  inputData: TInputDataElement[];
+  inputsQuantity: number;
+  activeInputsIndexes: number[];
+  activeInputsState: string[];
   isPasswordVisible: boolean;
   isFormComplete: boolean;
   isPasswordCorrect: boolean | null;
   activeElement: number;
 };
 
-type InputsBoxProps = {
+type InputsContainerProps = {
   state: TState;
-  activeElement: number;
-  handleChange(e: React.ChangeEvent<HTMLInputElement>, index: number): void;
   inputRef?: React.ForwardedRef<HTMLInputElement>;
+  handleChange(e: React.ChangeEvent<HTMLInputElement>, index: number): void;
   handleOnClick(e: React.MouseEvent<HTMLElement>): void;
   handleKeyUp(e: React.KeyboardEvent<HTMLInputElement>): void;
 };
 
-export { InputsBoxProps };
+export { InputsContainerProps };
