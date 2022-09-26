@@ -5,8 +5,10 @@ import { InputProps } from './types';
 const Input: React.FC<InputProps> = React.forwardRef(
   (
     {
-      inputData: { value, index, isDisabled },
-      state: { isPasswordVisible },
+      isDisabled,
+      value,
+      id,
+      isPasswordVisible,
       onChange,
       handleOnClick,
       handleKeyUp,
@@ -23,7 +25,7 @@ const Input: React.FC<InputProps> = React.forwardRef(
             type={isPasswordVisible ? 'text' : 'password'}
             ref={ref}
             onChange={onChange}
-            id={`${index}`}
+            id={id}
             onKeyUp={handleKeyUp}
             disabled={isDisabled}
           />

@@ -1,17 +1,18 @@
-import GlobalStyle from './assets/GlobalStyle';
+import GlobalStyle from './styles/GlobalStyle';
 import PasswordFields from './view/PasswordApp/PasswordApp';
-import useReduce from './hooks/usePasswordInputs';
+import usePasswordInputs from './hooks/usePasswordInputs/usePasswordInputs';
+import useInputFocus from './hooks/useInputFocus/useInputFocus';
 
 const App: React.FC = () => {
   const {
     state,
     handleChange,
-    inputRef,
     handleCheckbox,
     handleOnClick,
     handleKeyUp,
     handleSubmit,
-  } = useReduce('password');
+  } = usePasswordInputs('password');
+  const { inputRef } = useInputFocus();
 
   return (
     <>
