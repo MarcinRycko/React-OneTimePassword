@@ -8,7 +8,9 @@ The component on the basis of the passed password props generates single inputs 
 
 Install using NPM:
 
+```sh
 ### `npm install`
+```
 
 ## Run the component
 
