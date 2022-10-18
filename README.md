@@ -9,12 +9,14 @@ The component on the basis of the passed password props generates single inputs 
 Install using NPM:
 
 ```sh
-### `npm install`
+npm install
 ```
 
 ## Run the component
 
-### `npm start`
+```sh
+npm start
+```
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
