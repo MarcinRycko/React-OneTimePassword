@@ -1,6 +1,6 @@
 # Description
 
-The component on the basis of the passed password props generates single inputs in the number of password lengths extended by 2 - 6 disabled inputs at the end. The component blocks random inputs, and leaves random fields active. If the user enters the correct password in active inputs, then the message about the correct password is triggered, otherwise the user is to receive a message about the incorrect password. The "show password" checkbox allows you to show / hide the password"
+The component on the basis of the passed password props generates single inputs in the number of password lengths extended by 2 - 6 disabled inputs at the end. The component blocks random inputs, and leaves random fields active. If the user enters the correct password in active inputs, then the component run onSuccess callback function, otherwise the user is to receive a message about the incorrect password. The "show password" checkbox allows you to show / hide the password"
 
 # Run the component
 
