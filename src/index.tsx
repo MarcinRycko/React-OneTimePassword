@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
+import PasswordApp from './App/PasswordApp/PasswordApp';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <PasswordApp password={'password'} onSuccess={() => alert('Success')} />
   </React.StrictMode>
 );

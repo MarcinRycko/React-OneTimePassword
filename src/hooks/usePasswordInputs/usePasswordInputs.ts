@@ -4,7 +4,7 @@ import Validator from '../../utils/validator';
 import reducer from './reducer';
 import initialState from './initialState';
 
-const usePasswordInputs = (password: string) => {
+const usePasswordInputs = (password: string, onSuccess: () => void) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const handleChange = (
@@ -78,6 +78,12 @@ const usePasswordInputs = (password: string) => {
       payload: Validator.isFormComplete(state.activeInputsState),
     });
   }, [JSON.stringify(state.activeInputsState)]);
+
+  useEffect(() => {
+    if (state.isPasswordCorrect) {
+      onSuccess();
+    }
+  }, [state.isPasswordCorrect]);
 
   return {
     state,
