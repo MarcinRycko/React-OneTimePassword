@@ -23,6 +23,9 @@ type TAction =
     }
   | { type: 'NEXT_ITEM' }
   | { type: 'IS_FORM_COMPLETE'; payload: boolean }
-  | { type: 'SUBMIT'; payload: boolean };
+  | {
+      type: 'SUBMIT';
+      payload: boolean;
+    };
 
 export { TState, TAction };

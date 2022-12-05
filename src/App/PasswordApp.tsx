@@ -1,12 +1,12 @@
-import GlobalStyle from '../../styles/GlobalStyle';
-import usePasswordInputs from '../../hooks/usePasswordInputs/usePasswordInputs';
-import useInputFocus from '../../hooks/useInputFocus/useInputFocus';
-import Button from '../../Components/Button/Button';
-import Checkbox from '../../Components/Checkbox/Checkbox';
-import ErrorMessage from '../../Components/ErrorMessage/ErrorMessage';
-import InputsContainer from '../../Components/InputsContainer/InputsContainer';
-import { StyledWrapper } from '../../Components/Wrapper/StyledWrapper';
+import GlobalStyle from '../styles/GlobalStyle';
+import usePasswordInputs from '../hooks/usePasswordInputs/usePasswordInputs';
+import useInputFocus from '../hooks/useInputFocus/useInputFocus';
+import Button from '../Components/Button/Button';
+import Checkbox from '../Components/Checkbox/Checkbox';
+import ErrorMessage from '../Components/ErrorMessage/ErrorMessage';
+import InputsContainer from '../Components/InputsContainer/InputsContainer';
 import { PasswordAppProps } from './types';
+import { StyledPasswordApp } from './StyledPasswordApp';
 
 const PasswordApp: React.FC<PasswordAppProps> = ({ password, onSuccess }) => {
   const {
@@ -23,7 +23,7 @@ const PasswordApp: React.FC<PasswordAppProps> = ({ password, onSuccess }) => {
   return (
     <>
       <GlobalStyle />
-      <StyledWrapper type="formWrapper">
+      <StyledPasswordApp>
         <InputsContainer
           state={state}
           inputRef={inputRef}
@@ -42,7 +42,7 @@ const PasswordApp: React.FC<PasswordAppProps> = ({ password, onSuccess }) => {
         <Button disabled={isFormComplete} onClick={handleSubmit}>
           Login In
         </Button>
-      </StyledWrapper>
+      </StyledPasswordApp>
     </>
   );
 };

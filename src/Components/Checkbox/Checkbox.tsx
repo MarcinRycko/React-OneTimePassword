@@ -1,5 +1,4 @@
 import { CheckboxProps } from './types';
-import { StyledWrapper } from '../Wrapper/StyledWrapper';
 
 const Checkbox: React.FC<CheckboxProps> = ({
   id,
@@ -9,7 +8,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
 }) => {
   return (
     <>
-      <StyledWrapper>
+      <div>
         <input
           type="checkbox"
           id={id}
@@ -17,7 +16,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
           defaultChecked={isPasswordVisible}
         />
         <label htmlFor={id}>{children}</label>
-      </StyledWrapper>
+      </div>
     </>
   );
 };

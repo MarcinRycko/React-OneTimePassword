@@ -40,6 +40,15 @@ const usePasswordInputs = (password: string, onSuccess: () => void) => {
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
+    if (
+      Validator.isPasswordCorrect(
+        state.password,
+        state.activeInputsState,
+        state.activeInputsIndexes
+      )
+    ) {
+      onSuccess();
+    }
     dispatch({
       type: 'SUBMIT',
       payload: Validator.isPasswordCorrect(
@@ -78,12 +87,6 @@ const usePasswordInputs = (password: string, onSuccess: () => void) => {
       payload: Validator.isFormComplete(state.activeInputsState),
     });
   }, [JSON.stringify(state.activeInputsState)]);
-
-  useEffect(() => {
-    if (state.isPasswordCorrect) {
-      onSuccess();
-    }
-  }, [state.isPasswordCorrect]);
 
   return {
     state,

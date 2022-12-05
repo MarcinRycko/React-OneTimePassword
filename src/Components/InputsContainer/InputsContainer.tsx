@@ -1,6 +1,6 @@
 import { InputsContainerProps } from './types';
 import Input from '../Input/Input';
-import { StyledWrapper } from '../Wrapper/StyledWrapper';
+import { StyledInputContainer } from './StyledInputsContainer';
 
 const InputsContainer: React.FC<InputsContainerProps> = ({
   state: {
@@ -17,7 +17,7 @@ const InputsContainer: React.FC<InputsContainerProps> = ({
 }) => {
   return (
     <>
-      <StyledWrapper type="inputWrapper">
+      <StyledInputContainer>
         {[...new Array(inputsQuantity)].map((_, index) => {
           const activeInputIndex = activeInputsIndexes.indexOf(index);
 
@@ -40,7 +40,7 @@ const InputsContainer: React.FC<InputsContainerProps> = ({
             />
           );
         })}
-      </StyledWrapper>
+      </StyledInputContainer>
     </>
   );
 };

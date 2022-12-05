@@ -41,6 +41,7 @@ const reducer: Reducer<TState, TAction> = (state, action) => {
       };
 
     case 'SUBMIT':
+      state.isPasswordCorrect = false;
       return {
         ...state,
         isPasswordCorrect: action.payload,
