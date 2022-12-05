@@ -5,7 +5,7 @@ The component on the basis of the passed password props generates single inputs 
 # Run the component
 
 
-## Run in Github pages
+Github pages link:
 
 
 ```sh
